@@ -1,0 +1,13 @@
+dist/
+build
+node_modules
+coverage
+html-report
+npm-debug.log
+coverage.json
+.nyc_output/
+*.iml
+*.log
+.idea/
+.vscode/
+

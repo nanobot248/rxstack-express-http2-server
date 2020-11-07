@@ -1,0 +1,89 @@
+{
+  "name": "@nanobot248/rxstack-express-http2-server",
+  "version": "0.1.0",
+  "description": "RxStack express server module supporting http2 (via spdy)",
+  "author": "Andreas Hubert <nanobot248@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nanobot248/rxstack-express-http2-server.git"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "rxstack",
+    "express",
+    "http2"
+  ],
+  "main": "dist/index",
+  "typings": "dist/index",
+  "scripts": {
+    "prepublishOnly": "npm run compile",
+    "compile": "npm run clean && tsc -p .",
+    "clean": "rm -rf dist",
+    "lint": "tslint --project tsconfig.json --format stylish",
+    "mocha": "mocha --opts mocha.opts",
+    "coverage": "nyc npm run mocha",
+    "test": "npm run lint && npm run coverage"
+  },
+  "peerDependencies": {
+    "@rxstack/core": "^0.6"
+  },
+  "dependencies": {
+    "@rxstack/async-event-dispatcher": "^0.5.0",
+    "@types/spdy": "^3.4.4",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.1",
+    "express": "^4.17.1",
+    "injection-js": "^2.2.2",
+    "reflect-metadata": "^0.1.13",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@rxstack/core": "^0.6.1",
+    "@rxstack/exceptions": "^0.5.0",
+    "@rxstack/utils": "^0.4",
+    "@types/body-parser": "^1.17.1",
+    "@types/chai": "^4.2.6",
+    "@types/compression": "0.0.35",
+    "@types/express": "^4.17.2",
+    "@types/lodash": "^4.14.149",
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^12.12.14",
+    "chai": "3.5.0",
+    "fs-extra": "^5.0.0",
+    "lodash": "^4.17.11",
+    "mocha": "^5.2.0",
+    "nyc": "^14.1.1",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.5",
+    "should": "^13.2.3",
+    "source-map-support": "^0.4.15",
+    "spdy": "^4.0.2",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3"
+  },
+  "bugs": {
+    "url": "https://github.com/nanobot248/rxstack-express-http2-server/issues"
+  },
+  "homepage": "https://github.com/nanobot248/rxstack-express-http2-server",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "text-summary",
+      "html",
+      "lcov"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  }
+}
